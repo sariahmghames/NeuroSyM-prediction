@@ -1,4 +1,4 @@
-# time-attention
+# Input and time Attention
 Implementation of RNN for Time Series prediction from the paper 
 https://arxiv.org/abs/1704.02971.
 
