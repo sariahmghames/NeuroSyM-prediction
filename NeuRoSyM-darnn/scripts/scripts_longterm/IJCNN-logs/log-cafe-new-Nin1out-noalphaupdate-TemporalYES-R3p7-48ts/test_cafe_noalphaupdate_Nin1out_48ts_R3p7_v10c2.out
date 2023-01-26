@@ -1,0 +1,278 @@
+2023-01-24 16:48:34.944123: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-24 16:48:41.107020: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-24 16:48:41.109152: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2023-01-24 16:48:41.485977: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:41.486593: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:02:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.92GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:41.486616: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-24 16:48:41.489838: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-24 16:48:41.489874: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-24 16:48:41.491904: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-24 16:48:41.493231: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-24 16:48:41.495291: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-24 16:48:41.496741: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-24 16:48:41.500435: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-24 16:48:41.503135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-24 16:48:41.503172: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-24 16:48:42.158152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-24 16:48:42.158185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-24 16:48:42.158191: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-24 16:48:42.158195: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-24 16:48:42.160417: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/device:GPU:0 with 10251 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2023-01-24 16:48:42.161720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/device:GPU:1 with 10269 MB memory) -> physical GPU (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+2023-01-24 16:48:42.161955: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-24 16:48:43.888160: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-01-24 16:48:43.888901: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:43.889514: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:02:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.92GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:43.889548: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-24 16:48:43.889578: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-24 16:48:43.889593: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-24 16:48:43.889606: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-24 16:48:43.889619: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-24 16:48:43.889633: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-24 16:48:43.889646: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-24 16:48:43.889659: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-24 16:48:43.892025: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-24 16:48:43.892886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:43.893514: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:02:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.6705GHz coreCount: 28 deviceMemorySize: 10.92GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-01-24 16:48:43.893531: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2023-01-24 16:48:43.893547: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2023-01-24 16:48:43.893561: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2023-01-24 16:48:43.893574: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2023-01-24 16:48:43.893587: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2023-01-24 16:48:43.893600: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2023-01-24 16:48:43.893613: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2023-01-24 16:48:43.893626: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2023-01-24 16:48:43.895944: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1
+2023-01-24 16:48:43.895982: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-01-24 16:48:43.895990: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 
+2023-01-24 16:48:43.895995: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N Y 
+2023-01-24 16:48:43.895999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   Y N 
+2023-01-24 16:48:43.897809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10251 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2023-01-24 16:48:43.898417: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10269 MB memory) -> physical GPU (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+2023-01-24 16:48:43.898434: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+/home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/layers/legacy_rnn/rnn_cell_impl.py:903: UserWarning: `tf.nn.rnn_cell.LSTMCell` is deprecated and will be removed in a future version. This class is equivalent as `tf.keras.layers.LSTMCell`, and will be replaced by that in Tensorflow 2.0.
+  warnings.warn("`tf.nn.rnn_cell.LSTMCell` is deprecated and will be "
+/home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/legacy_tf_layers/core.py:171: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  warnings.warn('`tf.layers.dense` is deprecated and '
+/home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py:1719: UserWarning: `layer.apply` is deprecated and will be removed in a future version. Please use `layer.__call__` method instead.
+  warnings.warn('`layer.apply` is deprecated and '
+/home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py:1727: UserWarning: `layer.add_variable` is deprecated and will be removed in a future version. Please use `layer.add_weight` method instead.
+  warnings.warn('`layer.add_variable` is deprecated and '
+WARNING:tensorflow:From /home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/layers/legacy_rnn/rnn_cell_impl.py:981: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0124 16:48:45.335816 140469475636992 deprecation.py:531] From /home/smghames/anaconda3/envs/qtc_predict/lib/python3.9/site-packages/tensorflow/python/keras/layers/legacy_rnn/rnn_cell_impl.py:981: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2023-01-24 16:48:52.355443: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2023-01-24 16:48:52.557822: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3598065000 Hz
+2023-01-24 16:48:58.899694: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+GPU found
+True
+Using TensorFlow version 2.4.1
+#################################################### not using alpha
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+get dataset X_T shape= (63788, 27, 5)
+get_datasets y_T shape= (62049, 52, 1)
+train size =  51030
+val size =  6378
+---------------------Finished zipping data in tf dataset structure ----------------------------------------
+#################################################### not using alpha
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols1 in shape= 27
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+cols2 in shape= 1
+get dataset X_T shape= (63788, 27, 5)
+get_datasets y_T shape= (62049, 52, 1)
+train size =  51030
+val size =  6378
+---------------------Finished zipping data in tf dataset structure ----------------------------------------
+ inp att enabled ===================================================== 
+ _attention() ===================================================== 
+ inp att enabled ===================================================== 
+ _attention() ===================================================== 
+ inp att enabled ===================================================== 
+ _attention() ===================================================== 
+ inp att enabled ===================================================== 
+ _attention() ===================================================== 
+ inp att enabled ===================================================== 
+ _attention() ===================================================== 
+encoder outputs shape= (5, 5, 256)
+ _attention() ===================================================== 
+ _attention() ===================================================== 
+ _attention() ===================================================== 
+ _attention() ===================================================== 
+ _attention() ===================================================== 
+d_c shape= (5, 512)
+y_T shape= (5, 2)
+y_Ts shape = (5, 48, 2)
+time series cross entropy loss= (5, 48)
+====================================== MODEL INIT ======================================
+==================================================Test==================================================
+nb batches in val= 928
+evaluate loss shape=  ()
+----------------------
+RMSE: 2.81499
+MAE: 2.16170
+MAPE: inf
+ADE: 3.07053
+AFDE: 1.67339
+DE-STD: 10.90280
+FDE-STD: 4.89881
+best_RMSE=2.81499
