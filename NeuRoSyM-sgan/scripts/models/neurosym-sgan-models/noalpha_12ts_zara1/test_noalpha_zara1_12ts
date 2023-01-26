@@ -1,0 +1,5 @@
+AttrDict({'dataset_name': 'zara1', 'delim': '\t', 'loader_num_workers': 4, 'obs_len': 8, 'pred_len': 12, 'skip': 1, 'batch_size': 10, 'num_iterations': 23220, 'num_epochs': 200, 'embedding_dim': 16, 'num_layers': 1, 'dropout': 0, 'batch_norm': 0, 'mlp_dim': 64, 'encoder_h_dim_g': 32, 'decoder_h_dim_g': 32, 'noise_dim': (8,), 'noise_type': 'gaussian', 'noise_mix_type': 'global', 'clipping_threshold_g': 0, 'g_learning_rate': 0.0001, 'g_steps': 1, 'pooling_type': 'pool_net', 'pool_every_timestep': False, 'bottleneck_dim': 8, 'neighborhood_size': 2.0, 'grid_size': 8, 'd_type': 'local', 'encoder_h_dim_d': 48, 'd_learning_rate': 0.001, 'd_steps': 2, 'clipping_threshold_d': 0, 'l2_loss_weight': 0, 'best_k': 1, 'output_dir': '/home/sariah/SGAN/src/qtc_sgan', 'print_every': 5, 'checkpoint_every': 100, 'checkpoint_name': 'checkpoint_noalpha', 'checkpoint_start_from': None, 'restore_from_checkpoint': 0, 'num_samples_check': 5000, 'use_gpu': 1, 'timing': 0, 'gpu_num': '0'})
+obs traj shape= torch.Size([2253, 2, 8])
+index = 0
+out shape= torch.Size([7, 2, 8])
+Dataset: zara1, Pred Len: 12, ADE: 2.29, FDE: 4.33
