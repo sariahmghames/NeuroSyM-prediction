@@ -1,11 +1,11 @@
-==================================================== NeuRoSyM Prediction framework =============================================
+========================== NeuRoSyM Prediction framework =================================
 
 
 Note: 
 All .py files that have similar name but differ with "_informed" are imported from the original SGAN repository (https://github.com/agrimgupta92/sgan), the newly proposed neuro-symbolic approach for sgan is implemented in the "_informed" files where some enherits utility files from the original sgan. 
 
 
-================================================================================================================================
+===========================================================================================
 
 
 ## Original SGAN loaded hyperparameters (for investigation)
@@ -21,7 +21,7 @@ Note: to check the complete list of hyperparameters used for training each neuro
 
 
 
-================================================================================================================================
+==============================================================================================
 
 
 ## SGAN model evaluation
@@ -34,4 +34,4 @@ python scripts/evaluate_model.py --model_path scripts/models/sgan-p-models/hotel
 python scripts/evaluate_model_informed.py --model_path scripts/models/neurosym-sgan-models/alpha_cnd_8ts_zara1/checkpoint_alpha_cnd_8ts_zara1_with_model.pt --dset_type "test"
 
 
-=================================================================================================================================
+================================================================================================
