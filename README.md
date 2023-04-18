@@ -8,7 +8,7 @@ Sariah Mghames, Luca Castri, Marc Hanheide, and Nicola Bellotto. "A Neuro-Symbol
 
 
 # Results
-<p float="left">
+<p align="center">
     <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_gt_8ts_neurosym.gif" width="320" height="240" /> 
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_sgan.gif" width="320" height="240" />
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" />
