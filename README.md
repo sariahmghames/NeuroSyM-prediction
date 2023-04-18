@@ -1,4 +1,7 @@
-# NeuroSyM-prediction
+<p align="center">
+    <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/logo.png" width="146" height="144" /> 
+</p> NeuroSyM-prediction
+
 This repository applies a neuro-symbolic approach for enhancing multivariate time series prediction accuracy with application to context-aware human motion prediction 
 
 
