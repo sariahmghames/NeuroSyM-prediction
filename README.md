@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/logo.png" width="146" height="144" /> 
+    <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/logo.png" width="490" height="144" /> 
 </p> 
 
 This repository applies a neuro-symbolic approach for enhancing multivariate time series prediction accuracy with application to context-aware human motion prediction 
@@ -11,8 +11,13 @@ Sariah Mghames, Luca Castri, Marc Hanheide, and Nicola Bellotto. "A Neuro-Symbol
 
 
 # Results
+The following results applies to zara01 test dataset on sgan framework and its neurosym version. We illustrate only 4 pedestrians motion for clarity, though the context is much larger.
+
 <p align="center">
     <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_gt_8ts_neurosym.gif" width="320" height="240" title="ground truth sgan" /> 
+</p>
+
+<p align="center">
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_sgan.gif" width="320" height="240" title = "sgan"/>
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" title ="neurosym-sgan"/>
 </p>
