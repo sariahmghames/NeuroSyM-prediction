@@ -11,6 +11,6 @@ Sariah Mghames, Luca Castri, Marc Hanheide, and Nicola Bellotto. "A Neuro-Symbol
 <p align="center">
     <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_gt_8ts_neurosym.gif" width="320" height="240" title="ground truth sgan" /> 
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_sgan.gif" width="320" height="240" title = "sgan"/>
-  <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" title ="neurosym-sgan/>
+  <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" title ="neurosym-sgan"/>
 </p>
 
