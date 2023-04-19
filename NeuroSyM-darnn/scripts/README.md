@@ -1,4 +1,4 @@
-# Neuro-Symbolic approah for the Input and Time Attention Series Prediction
+## Neuro-Symbolic approah for the Input and Time Attention Series Prediction
 
 Navigate to the directoty scripts_longterm/ to start the training
 To Get started you can launch the shell scripts:
