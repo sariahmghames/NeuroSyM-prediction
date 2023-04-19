@@ -21,12 +21,12 @@ Note: to check the complete list of hyperparameters used for training each neuro
 
 ## III. SGAN model evaluation
 
-python scripts/evaluate_model.py --model_path scripts/models/neurosym-sgan-models/noalpha_8ts_zara1/checkpoint_noalpha_8ts_zara1_with_model.pt --dset_type "test" --save 1
+python scripts/evaluate_model.py --model_path scripts/models/neurosym-sgan-models/noalpha_8ts_zara1/checkpoint_noalpha_zara1_with_model.pt --dset_type "test" --save 1
 
 
 ## IV. NeuroSyM SGAN model evaluation
 
-python scripts/evaluate_model_informed.py --model_path scripts/models/neurosym-sgan-models/alpha_cnd_8ts_zara1/checkpoint_alpha_cnd_8ts_zara1_with_model.pt --dset_type "test" --save 1
+python scripts/evaluate_model_informed.py --model_path scripts/models/neurosym-sgan-models/alpha_cnd_8ts_zara1/checkpoint_alpha_cnd_zara1_with_model.pt --dset_type "test" --save 1
 
 Set --save arg to 1 for further plotting purpose. Save the ground truth and predicted trajectories generated in a folder named "results" that you create inside "scripts".
 
