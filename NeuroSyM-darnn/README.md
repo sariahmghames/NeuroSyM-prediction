@@ -10,12 +10,12 @@ II. I/O dataset processing and generation
 - Navigate to NeuroSyn-darnn workspace and: catkin_make
 - run: rosrun qtc_2d time_series
 
-II. Navigate to the directoty scripts_longterm/ to start the training
+III. Navigate to the directoty scripts_longterm/ to start the training
 To Get started you can run the shell scripts:
 - peds_pre_caf_new1.sh for the 48 times steps prediction
 - peds_pre_caf_new2.sh for the 80 time steps prediction
 
-III. To switch between the following models:
+IV. To switch between the following models:
 - no input attention
 - input attention as per the original DA-RNN paper
 - input attention with a-priori information on the possible effect of each input time series on the first one (the one we predict), provided by 
