@@ -22,5 +22,5 @@ The following results applies to zara01 test dataset on sgan framework and its n
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" />
 </p>
 
-# Replicating resuls
+# Training and Testing
 Please refer to the readme.md inside each architecture package
