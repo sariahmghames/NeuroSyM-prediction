@@ -27,7 +27,7 @@ python scripts/evaluate_model.py --model_path scripts/models/sgan-p-models/hotel
 
 ## NeurRoSyM SGAN model evaluation
 
-python scripts/evaluate_model_informed.py --model_path scripts/models/neurosym-sgan-models/alpha_cnd_8ts_zara1/checkpoint_alpha_cnd_8ts_zara1_with_model.pt --dset_type "test"
+python scripts/evaluate_model_informed.py --model_path scripts/models/neurosym-sgan-models/alpha_cnd_8ts_zara1/checkpoint_alpha_cnd_8ts_zara1_with_model.pt --dset_type "test" --save 1
 
 
 
