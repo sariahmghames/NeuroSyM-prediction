@@ -4,15 +4,18 @@ import torch
 
 from attrdict import AttrDict
 
-from sgan.data.loader_informed import data_loader
-from sgan.models_informed import TrajectoryGenerator
+from sgan.data.loader_informed2 import data_loader
+from sgan.models_informed2 import TrajectoryGenerator
 from sgan.losses_informed import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
+from sgan.utils import int_tuple, bool_flag, get_total_norm
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
 parser.add_argument('--num_samples', default=20, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
+parser.add_argument('--save', default=1, type=bool_flag)
+
 
 
 def get_generator(checkpoint):
@@ -37,7 +40,7 @@ def get_generator(checkpoint):
         batch_norm=args.batch_norm) # generator creation 
     generator.load_state_dict(checkpoint['g_state']) # we feed the generator , 
     generator.cuda()
-    generator.train() # it calls forward()
+    generator.train() 
     return generator
 
 
@@ -68,6 +71,8 @@ def evaluate_helper_inf(error, seq_start_end, st_dim):
 def evaluate(args, loader, generator, num_samples):
     ade_outer, fde_outer, std_outer, fde_std_outer = [], [], [], []
     total_traj = 0
+    traj_gt = []
+    pred_traj = []
     with torch.no_grad():
         for batch in loader:
             batch = [tensor.cuda() for tensor in batch]
@@ -77,7 +82,7 @@ def evaluate(args, loader, generator, num_samples):
             ade, fde, std = [], [], []
             total_traj += pred_traj_gt.size(1) 
 
-            for _ in range(num_samples): # num_samples = 20 cz best_k = 20, then take the min in helper over the 20 runs
+            for _ in range(num_samples): 
                 pred_traj_fake_rel = generator(
                     obs_traj, obs_traj_rel, obs_traj_weight, seq_start_end
                 ) 
@@ -101,6 +106,12 @@ def evaluate(args, loader, generator, num_samples):
             std_outer.append(std_sum)
             fde_std_outer.append(fde_std_sum)
 
+            traj_gt.append(pred_traj_gt)
+            pred_traj.append(pred_traj_fake)
+
+        if (save):
+            torch.save(traj_gt, 'zara01_test_gt.pt')
+            torch.save(pred_traj, 'zara01_test_pred.pt')
 
         std_ade = torch.std(torch.cat(std_outer, dim=0), axis = 1)
         std_ade = torch.std(std_ade, axis=0)
@@ -131,7 +142,7 @@ def main(args):
         print("loaded model args are :", _args)
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
-        ade, fde, std, fde_std = evaluate(_args, loader, generator, args.num_samples)
+        ade, fde, std, fde_std = evaluate(_args, args.save, loader, generator, args.num_samples)
         print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}, ADE-STD: {:.2f}, FDE-STD: {:.2f}'.format(
             _args.dataset_name, _args.pred_len, ade, fde, std, fde_std))
 
