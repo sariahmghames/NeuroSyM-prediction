@@ -10,7 +10,7 @@ To cite this work, please refer to the proceedings of the International Joint Co
 Sariah Mghames, Luca Castri, Marc Hanheide, and Nicola Bellotto. "A Neuro-Symbolic Approach for Enhanced Human Motion Prediction"
 
 
-# Results
+## Results
 The following results applies to zara01 test dataset on sgan framework and its neurosym version. We illustrate one single batch with only 6 pedestrians motion for clarity, though the context is much larger.
 
 <p align="center">
@@ -22,5 +22,5 @@ The following results applies to zara01 test dataset on sgan framework and its n
   <img src="https://github.com/sariahmghames/NeuroSyM-prediction/blob/main/NeuroSyM-sgan/neurosgan_images/zara01_pred_8ts_neurosym.gif" width="320" height="240" />
 </p>
 
-# Training and Testing
+## Training and Testing
 Please refer to the readme.md inside each architecture package
