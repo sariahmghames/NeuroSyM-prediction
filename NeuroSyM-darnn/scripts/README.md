@@ -1,7 +1,7 @@
 ## Neuro-Symbolic approah for the Input and Time Attention Series Prediction
 
 Navigate to the directoty scripts_longterm/ to start the training
-To Get started you can launch the shell scripts:
+To Get started you can run the shell scripts:
 - peds_pre_caf_new1.sh for the 48 times steps prediction
 - peds_pre_caf_new2.sh for the 80 time steps prediction
 
@@ -19,4 +19,4 @@ run_validation = True/False
 run_test = True/False
 run_train = True/False
 
-in addition to the hyperparams in the configuraion files in the direcory conf/
+in addition to the hyperparams in the configuraion files in the directory conf/
