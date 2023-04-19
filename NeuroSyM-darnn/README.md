@@ -4,6 +4,11 @@ I. Processed JackRabbot dataset (JRDB)
 - To download the dataset visit: https://jrdb.erc.monash.edu/
 - We trained and tested on scenario: bytes-cafe-2019-02-07_0
 - Find processed dataset by navigating to ./scripts/data/JackRabbot/clusters/newest_Nin_1out/ directory, and unzip the "processed_data" folder
+- Scripts in qtc_2d and data_processing are used to process the dataset (JRDB) and generate labels. 
+
+II. I/O dataset processing and generation
+- Navigate to NeuroSyn-darnn workspace and: catkin_make
+- run: rosrun qtc_2d time_series
 
 II. Navigate to the directoty scripts_longterm/ to start the training
 To Get started you can run the shell scripts:
@@ -25,3 +30,6 @@ run_test = True/False
 run_train = True/False
 
 in addition to the hyperparams in the configuraion files in the directory conf/
+
+
+Note: the generated cnd labels in cnd_labels.txt is a WIP to automatically import them to qtc_indexed_c1.cpp. Currently they are simply copied.
