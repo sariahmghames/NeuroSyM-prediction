@@ -35,5 +35,6 @@ The following results applies to zara01 test dataset on sgan framework and its n
 Please refer to the readme.md inside each architecture package
 
 ```
-We welcome any issue or collaborations. You can reach out @ _sariahmghames@gmail.com_ 
+We welcome any issue or collaborations. You can reach out @ sariahmghames@gmail.com
+
 ```
