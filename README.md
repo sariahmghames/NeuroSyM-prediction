@@ -7,21 +7,16 @@ This repository applies a neuro-symbolic approach for enhancing multivariate tim
 
 The scientific content of this work can be found @ https://arxiv.org/abs/2304.11740. To cite this work, please refer to the proceedings of the International Joint Conference on Neural Networks (IJCNN 2023), with the following citation:
 
+```
 @inproceedings{mghames2023,
-
   title={A Neuro-Symbolic Approach for Enhanced Human Motion Prediction},
-  
   author={Mghames, Sariah and Castri, Luca and Hanheide, Marc and Bellotto, Nicola},
-  
   booktitle={2023 IEEE International Joint Conference on Neural Networks (IJCNN)},
-  
   pages={},
-  
   year={2023},
-  
   organization={IEEE}
-  
 }
+```
 
 
 ## Results
