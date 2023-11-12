@@ -5,8 +5,8 @@ import torch
 from attrdict import AttrDict
 
 from sgan.data.loader_informed2 import data_loader
-from sgan.models_informed2 import TrajectoryGenerator
-from sgan.losses_informed import displacement_error, final_displacement_error
+from sgan.models_informed2_tm1 import TrajectoryGenerator
+from sgan.losses_informed2_causal_v1_tm1 import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 from sgan.utils import int_tuple, bool_flag, get_total_norm
 
@@ -15,7 +15,6 @@ parser.add_argument('--model_path', type=str)
 parser.add_argument('--num_samples', default=20, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
 parser.add_argument('--save', default=1, type=bool_flag)
-
 
 
 def get_generator(checkpoint):
@@ -40,7 +39,7 @@ def get_generator(checkpoint):
         batch_norm=args.batch_norm) # generator creation 
     generator.load_state_dict(checkpoint['g_state']) # we feed the generator , 
     generator.cuda()
-    generator.train() 
+    generator.train() # it calls forward()
     return generator
 
 
@@ -58,17 +57,68 @@ def evaluate_helper(error, seq_start_end):
     return sum_
 
 
+def evaluate_helper2(error, seq_start_end):
+    summ = []
+    error = torch.stack(error, dim=1) # stacking the num_samples runs along columns
 
-def evaluate_helper_inf(error, seq_start_end, st_dim):
+    for (start, end) in seq_start_end:
+        start = start.item()
+        end = end.item()
+        _error = error[start:end]
+        #print("_err dim =", _error.shape)
+        _error = torch.std(_error, dim=0) # dim 0 is the batch size
+        _error = torch.min(_error) #min over the num_samples runs
+        summ.append(_error) # summing erros overs batch_size
+    return torch.std(torch.tensor(summ))
+
+
+def evaluate_helper3(error, seq_start_end):
+    summ = []
+    error = torch.stack(error, dim=1) # stacking the num_samples runs along columns
+
+    for (start, end) in seq_start_end:
+        start = start.item()
+        end = end.item()
+        _error = error[start:end]
+        #print("_err dim =", _error.shape)
+        _error = torch.mean(_error, dim=0) # dim 0 is the num_ped size in 1 example in a batch
+        _error = torch.min(_error) #min over the num_samples runs
+        summ.append(_error) # summing erros overs batch_size
+    return torch.mean(torch.tensor(summ))
+
+def evaluate_helper4(error, seq_start_end, st_dim):
     summ = []
     error = torch.stack(error, dim=st_dim)
+    #error= torch.min(error, dim = 2)
 
+    # for (start, end) in seq_start_end:
+    #     start = start.item()
+    #     end = end.item()
+    #     _error = error[start:end]
+    #     #_err = torch.std(_error, dim=0) 
+    #     _er = torch.std(_error, axis=1) 
+    #     _erro= torch.min(_er, axis = 1)
+    #     #print("_erro shape =", _erro.shape)
+    #     summ.append(_erro)
+    # return summ
     return error
 
 
+def evaluate_helper5(error, seq_start_end):
+    summ = []
+    error = torch.stack(error, dim=1)
+
+    for (start, end) in seq_start_end:
+        start = start.item()
+        end = end.item()
+        _error = error[start:end]
+        _err = torch.std(_error, dim=0) 
+        #_erro= torch.min(_er)
+        summ.append(_err)
+    return torch.tensor(summ)
 
 
-def evaluate(args, loader, generator, num_samples):
+def evaluate(args, save, loader, generator, num_samples):
     ade_outer, fde_outer, std_outer, fde_std_outer = [], [], [], []
     total_traj = 0
     traj_gt = []
@@ -80,47 +130,58 @@ def evaluate(args, loader, generator, num_samples):
              non_linear_ped, loss_mask, obs_traj_weight, pred_traj_weight, seq_start_end) = batch # gt for ground truth
 
             ade, fde, std = [], [], []
-            total_traj += pred_traj_gt.size(1) 
+            total_traj += pred_traj_gt.size(1) # how many traj in 1 batch
 
-            for _ in range(num_samples): 
+            for _ in range(num_samples): # num_samples = 20 cz best_k = 20, then take the min in helper over the 20 runs
                 pred_traj_fake_rel = generator(
                     obs_traj, obs_traj_rel, obs_traj_weight, seq_start_end
-                ) 
+                ) # feeding the generator
                 pred_traj_fake = relative_to_abs(
                     pred_traj_fake_rel, obs_traj[-1]
                 )
                 losses, loss_std = displacement_error(pred_traj_fake, pred_traj_gt, mode='raw')
+                #losses = displacement_error(pred_traj_fake, pred_traj_gt, mode='raw')
                 ade.append(losses)
                 fde.append(final_displacement_error(pred_traj_fake[-1], pred_traj_gt[-1], mode='raw'))
+                #std.append(torch.std(loss_std, dim=1))
                 std.append(loss_std)
 
 
             ade_sum = evaluate_helper(ade, seq_start_end) # over each seq_start_end in a batch
             fde_sum = evaluate_helper(fde, seq_start_end)
-
-            std_sum = evaluate_helper_inf(std, seq_start_end, 2)
-            fde_std_sum = evaluate_helper_inf(fde, seq_start_end, 1)
+            #std_sum = evaluate_helper(std, seq_start_end)
+            std_sum = evaluate_helper4(std, seq_start_end, 2)
+            fde_std_sum = evaluate_helper4(fde, seq_start_end, 1)
 
             ade_outer.append(ade_sum) # sum over 1 batch
             fde_outer.append(fde_sum)
             std_outer.append(std_sum)
             fde_std_outer.append(fde_std_sum)
 
+
             traj_gt.append(pred_traj_gt)
             pred_traj.append(pred_traj_fake)
 
-        if (save):
-            torch.save(traj_gt, 'zara01_test_gt.pt')
-            torch.save(pred_traj, 'zara01_test_pred.pt')
 
+        if (save):
+            torch.save(traj_gt, 'THOR_test_pred_gt.pt')
+            torch.save(pred_traj, 'THOR_test_pred_est.pt')
+            torch.save(obs_traj, 'THOR_test_obs.pt')
+
+        #std_ade = sum(torch.tensor(std_outer)) / (total_traj) # same as torch.mean with helper3 case
+        #std_outer = list(itertools.chain(*std_outer))
+        #print(std_outer)
+        #print("std shape = ",torch.tensor(std_outer).shape)
         std_ade = torch.std(torch.cat(std_outer, dim=0), axis = 1)
         std_ade = torch.std(std_ade, axis=0)
         std_ade = torch.min(std_ade)
         fde_std_f = torch.std(torch.cat(fde_std_outer, dim=0), axis = 0)
         fde_std_f = torch.min(fde_std_f)
+        #std_ade = torch.std(torch.tensor(torch.stack(std_outer)), axis = 0)
+        #std_ade = torch.mean(torch.tensor(std_outer))
         ade = sum(ade_outer) / (total_traj * args.pred_len) # normalisation
         fde = sum(fde_outer) / (total_traj)
-
+        #return ade, fde
         return ade, fde, std_ade, fde_std_f
 
 
@@ -145,6 +206,10 @@ def main(args):
         ade, fde, std, fde_std = evaluate(_args, args.save, loader, generator, args.num_samples)
         print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}, ADE-STD: {:.2f}, FDE-STD: {:.2f}'.format(
             _args.dataset_name, _args.pred_len, ade, fde, std, fde_std))
+
+        #ade, fde= evaluate(_args, loader, generator, args.num_samples)
+        #print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}'.format(
+        #    _args.dataset_name, _args.pred_len, ade, fde))
 
 
 if __name__ == '__main__':
