@@ -13,7 +13,7 @@ loaded model args are : AttrDict({'encoder_h_dim_d': 48, 'neighborhood_size': 2.
 
 ## II. NeuroSyM SGAN model training 
 
-python scripts/train_informed.py --dataset_name zara1 --pool_every_timestep False --noise_dim 8 --checkpoint_name checkpoint_alpha_cnd_8ts_zara1 --bottleneck_dim 8 --encoder_h_dim_d 48 --batch_size 10 --encoder_h_dim_g 32 --embedding_dim 16 --mlp_dim 64 --decoder_h_dim_g 32 --num_epochs 200 --num_iterations 8512 --noise_mix_type 'global' --noise_type 'gaussian' --labels_dir "scripts/sgan/data/" --filename "cnd_labels.txt" --obs_len 8 --pred_len 8 --g_learning_rate 0.0001 --d_learning_rate 0.001
+python scripts/train_informed.py --dataset_name zara1 --pool_every_timestep 0 --noise_dim 8 --checkpoint_name checkpoint_alpha_cnd_8ts_zara1 --bottleneck_dim 8 --encoder_h_dim_d 48 --batch_size 10 --encoder_h_dim_g 32 --embedding_dim 16 --mlp_dim 64 --decoder_h_dim_g 32 --num_epochs 200 --num_iterations 8512 --noise_mix_type 'global' --noise_type 'gaussian' --labels_dir "scripts/sgan/data/" --filename "cnd_labels.txt" --obs_len 8 --pred_len 8 --g_learning_rate 0.0001 --d_learning_rate 0.001
 
 - For training with automatically generated cnd labels, pass cnd_labels.txt to arg filename
 - For training with expert guessed binary labels, use qtcc1_labels.txt as value of arg filename
