@@ -12,7 +12,7 @@ The scientific content of this work can be found @ https://arxiv.org/abs/2304.11
   title={A Neuro-Symbolic Approach for Enhanced Human Motion Prediction},
   author={Mghames, Sariah and Castri, Luca and Hanheide, Marc and Bellotto, Nicola},
   booktitle={2023 IEEE International Joint Conference on Neural Networks (IJCNN)},
-  pages={},
+  pages={1--8},
   year={2023},
   organization={IEEE}
 }
